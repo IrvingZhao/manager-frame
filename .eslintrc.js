@@ -12,7 +12,21 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['path'] }]
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'import/no-absolute-path': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'vue/no-multiple-template-root': 'off',
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: ['state', 'config']
+      }
+    ],
+    'no-unused-vars': ['off', { args: 'after-used' }],
+    '@typescript-eslint/no-unused-vars': ['off', { args: 'after-used' }],
+    '@typescript-eslint/no-unused-vars-experimental': ['error', { ignoreArgsIfArgsAfterAreUsed: true }]
   },
-  ignorePatterns: ['vite.config.ts']
+  settings: {}
 }
