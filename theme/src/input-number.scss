@@ -21,6 +21,11 @@
     }
   }
 
+  // update 添加左对齐
+  &.align-left .#{$namespace}-input__inner{
+    text-align: left;
+  }
+
   @include e((increase, decrease)) {
     position: absolute;
     z-index: 1;

@@ -7,6 +7,7 @@ $--pagination-height-extra-small: 22px !default;
 $--pagination-line-height-extra-small: $--pagination-height-extra-small !default;
 
 @include b(pagination) {
+  text-align: center; // update 分页框，剧中对齐
   white-space: nowrap;
   padding: 2px 5px;
   color: $--pagination-font-color;
@@ -87,7 +88,7 @@ $--pagination-line-height-extra-small: $--pagination-height-extra-small !default
   }
 
   .btn-next {
-    padding-left: 12px;    
+    padding-left: 12px;
   }
 
   .#{$namespace}-pager li.disabled {
@@ -139,8 +140,10 @@ $--pagination-line-height-extra-small: $--pagination-height-extra-small !default
 
     .#{$namespace}-input__suffix {
       line-height: $--pagination-line-height-extra-small;
+
       .#{$namespace}-input__suffix-inner {
         line-height: $--pagination-line-height-extra-small;
+
         i.el-select__caret {
           line-height: $--pagination-line-height-extra-small;
         }
@@ -187,7 +190,7 @@ $--pagination-line-height-extra-small: $--pagination-height-extra-small !default
     line-height: 18px;
     padding: 0 2px;
     height: $--pagination-button-height;
-      
+
     text-align: center;
     margin: 0 2px;
     box-sizing: border-box;

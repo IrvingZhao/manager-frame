@@ -34,13 +34,17 @@ $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
 /// color|1|Functional Color|1
-$--color-success: #67C23A !default;
+$--color-success: #00CFA3 !default; // update 成功颜色
 /// color|1|Functional Color|1
 $--color-warning: #E6A23C !default;
 /// color|1|Functional Color|1
 $--color-danger: #F56C6C !default;
 /// color|1|Functional Color|1
 $--color-info: #909399 !default;
+
+$--color-cyan: #51CBA5 !default; // update 添加 青色
+
+$--color-orange: #FFA210 !default; // update 添加 橘色
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -83,6 +87,7 @@ $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+$--border-radius-large: 8px !default; // update 添加 大尺寸圆角
 /// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
 /// borderRadius|1|Radius|0
@@ -403,7 +408,7 @@ $--notification-danger-icon-color: $--color-danger !default;
 /* Input
 -------------------------- */
 /// color||Color|0
-$--input-font-color: $--color-text-regular !default;
+$--input-font-color: $--color-text-primary !default; // update 更新按钮边框色 由 $--color-text-regular 至 $--color-text-primary
 
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
@@ -442,6 +447,7 @@ $--input-small-height: 32px !default;
 $--input-mini-font-size: 12px !default;
 /// height||Other|4
 $--input-mini-height: 28px !default;
+$--input-tiny-height: 24px !default; // update 添加 tiny min-height
 
 /* Cascader
 -------------------------- */
@@ -535,11 +541,11 @@ $--button-danger-font-color: $--color-white !default;
 /// color||Color|0
 $--button-danger-background-color: $--color-danger !default;
 /// color||Color|0
-$--button-info-border-color: $--color-info !default;
+$--button-info-border-color: #BCCBDB !default; // update 更新 info 按钮 边框颜色 由 $--color-info 至 #BCCBDB
 /// color||Color|0
 $--button-info-font-color: $--color-white !default;
 /// color||Color|0
-$--button-info-background-color: $--color-info !default;
+$--button-info-background-color: #BCCBDB !default; // update 更新 info 按钮 背景颜色 由 $--color-info 至 #BCCBDB
 
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
@@ -582,12 +588,12 @@ $--table-border: 1px solid $--table-border-color !default;
 /// color||Color|0
 $--table-font-color: $--color-text-regular !default;
 /// color||Color|0
-$--table-header-font-color: $--color-text-secondary !default;
+$--table-header-font-color: $--color-text-primary !default; // update 更新表格头颜色
 /// color||Color|0
 $--table-row-hover-background-color: $--background-color-base !default;
 $--table-current-row-background-color: $--color-primary-light-9 !default;
 /// color||Color|0
-$--table-header-background-color: $--color-white !default;
+$--table-header-background-color: #EDF1F7 !default; // update 更新头部默认颜色
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 
 /* Pagination

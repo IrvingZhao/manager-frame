@@ -8,7 +8,7 @@
   position: relative;
   margin: 0 auto 50px;
   background: $--dialog-background-color;
-  border-radius: $--border-radius-small;
+  border-radius: $--border-radius-large; // update 更新弹窗圆角，由 $--border-radius-small 至 $--border-radius-large
   box-shadow: $--dialog-box-shadow;
   box-sizing: border-box;
   width: 50%;

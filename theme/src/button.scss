@@ -4,6 +4,21 @@
 @import "mixins/mixins";
 @import "mixins/utils";
 
+// update 添加 button-width
+@include b(button-width) {
+  display: inline-block;
+  $B: $namespace+'-button' !global;
+  @include b(button) {
+    width: 100%;
+  }
+  & + & {
+    margin-left: 10px;
+  }
+  & + .#{$B} {
+    margin-left: 10px;
+  }
+}
+
 @include b(button) {
   display: inline-block;
   line-height: 1;
@@ -22,6 +37,17 @@
   transition: .1s;
   font-weight: $--button-font-weight;
   @include utils-user-select(none);
+
+  > i { // update 添加图标间距
+    margin-right: 8px;
+  }
+
+  // update 级联button-width 添加 left
+  $BW: $namespace+'-button-width' !global;
+  & + .#{$BW} {
+    margin-left: 10px;
+  }
+
   & + & {
     margin-left: 10px;
   }
@@ -111,7 +137,7 @@
       right: -1px;
       bottom: -1px;
       border-radius: inherit;
-      background-color: rgba(255,255,255,.35);
+      background-color: rgba(255, 255, 255, .35);
     }
   }
   @include when(round) {
@@ -161,6 +187,16 @@
       padding: $--button-mini-padding-vertical;
     }
   }
+
+  // update 添加超小按钮设置,padding 5px 8px font-size 12px
+  @include m(tiny) {
+    min-height: $--input-tiny-height;
+    @include button-size(5px, 8px, 12px, $--button-medium-border-radius);
+    @include when(circle) {
+      padding: 5px;
+    }
+  }
+
   @include m(text) {
     border-color: transparent;
     color: $--color-primary;
@@ -196,22 +232,27 @@
   & > .#{$namespace}-button {
     float: left;
     position: relative;
+
     & + .#{$namespace}-button {
       margin-left: 0;
     }
+
     &:first-child {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
+
     &:last-child {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
+
     &:first-child:last-child {
-      border-top-right-radius: $--button-border-radius;
-      border-bottom-right-radius: $--button-border-radius;
-      border-top-left-radius: $--button-border-radius;
-      border-bottom-left-radius: $--button-border-radius;
+      // update 按钮组下 按钮圆角尺寸
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
 
       &.is-round {
         border-radius: 20px;
@@ -221,9 +262,11 @@
         border-radius: 50%;
       }
     }
+
     &:not(:first-child):not(:last-child) {
       border-radius: 0;
     }
+
     &:not(:last-child) {
       margin-right: -1px;
     }
@@ -252,9 +295,11 @@
       &:first-child {
         border-right-color: rgba($--color-white, 0.5);
       }
+
       &:last-child {
         border-left-color: rgba($--color-white, 0.5);
       }
+
       &:not(:first-child):not(:last-child) {
         border-left-color: rgba($--color-white, 0.5);
         border-right-color: rgba($--color-white, 0.5);

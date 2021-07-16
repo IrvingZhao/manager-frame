@@ -14,6 +14,8 @@
   background-color: $--color-white;
   font-size: 14px;
   color: $--table-font-color;
+  border-radius: $--border-radius-large; // update 表格添加圆角
+  border: 1px solid $--border-color-base; // update 添加边框
 
   // 数据为空
   @include e(empty-block) {
@@ -86,8 +88,8 @@
   }
 
   @include m(fit) {
-    border-right: 0;
-    border-bottom: 0;
+    //border-right: 0; // update 移除右侧边框设置
+    //border-bottom: 0; // update 移除底部边框设置
 
     th.gutter, td.gutter {
       border-right-width: 1px;
@@ -117,14 +119,22 @@
     }
   }
 
+  // update 添加 修改背景色
+  th {
+    background-color: $--table-header-background-color;
+  }
+
   th, td {
-    padding: 12px 0;
+    padding: 7px 0; // update 上下间距由 12 调整至 7
     min-width: 0;
     box-sizing: border-box;
     text-overflow: ellipsis;
     vertical-align: middle;
     position: relative;
     text-align: left;
+    background: $--color-white; // update 添加颜色
+    color: $--table-header-font-color; // update 添加文字颜色
+    font-size: $--font-size-medium; // update 添加文字大小
 
     @include when(center) {
       text-align: center;
@@ -325,8 +335,10 @@
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: $--color-white;
+    background-color: $--table-header-background-color; // update 修改背景色
     border-bottom: $--table-border;
+    color: $--table-header-font-color; // update 添加文字颜色
+    font-size: $--font-size-medium; // update 添加文字大小
   }
 
   @include e(fixed-right) {
@@ -546,6 +558,7 @@
     .#{$namespace}-table__fixed-right {
       bottom: 0;
       overflow: hidden;
+      border-radius: $--border-radius-large; // update 添加圆角
     }
   }
 

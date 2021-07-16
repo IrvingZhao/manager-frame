@@ -15,6 +15,7 @@
     line-height: 1.2;
     min-width: 10px;
     word-wrap: break-word;
+    max-width: 300px; // update tool-tip 添加最大宽度
 
     .popper__arrow,
     .popper__arrow::after {
@@ -115,24 +116,28 @@
 
       &[x-placement^="top"] .popper__arrow {
         border-top-color: $--tooltip-fill;
+
         &::after {
           border-top-color: $--tooltip-color;
         }
       }
       &[x-placement^="bottom"] .popper__arrow {
         border-bottom-color: $--tooltip-fill;
+
         &::after {
           border-bottom-color: $--tooltip-color;
         }
       }
       &[x-placement^="left"] .popper__arrow {
         border-left-color: $--tooltip-fill;
+
         &::after {
           border-left-color: $--tooltip-color;
         }
       }
       &[x-placement^="right"] .popper__arrow {
         border-right-color: $--tooltip-fill;
+
         &::after {
           border-right-color: $--tooltip-color;
         }
