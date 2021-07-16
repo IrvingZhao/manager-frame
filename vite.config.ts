@@ -33,8 +33,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@platform': resolve(__dirname, 'src/platform'),
-      '@plugin': resolve(__dirname, 'src/plugin')
+      '@platform': resolve(__dirname, 'src/base-platform'),
+      '@plugin': resolve(__dirname, 'src/base-plugin')
     }
   },
   base: baseUrl,
