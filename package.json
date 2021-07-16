@@ -5,7 +5,11 @@
     "dev": "vite",
     "build:style": "rimraf ./theme/lib && gulp -f ./theme/gulpfile.js build",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{vue,ts,tsx,jsx,js}": "eslint --fix"
   },
   "dependencies": {
     "vue": "^3.0.5"
@@ -27,6 +31,8 @@
     "gulp-cssmin": "^0.2.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.1",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
     "sass": "^1.35.2",
