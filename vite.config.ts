@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { resolve } from 'path'
 
 const host = 'localhost'
 const port = 3000
@@ -30,6 +31,12 @@ export default defineConfig({
       ]
     })
   ],
+  resolve: {
+    alias: {
+      '@platform': resolve(__dirname, 'src/platform'),
+      '@plugin': resolve(__dirname, 'src/plugin')
+    }
+  },
   base: baseUrl,
   server: {
     host,

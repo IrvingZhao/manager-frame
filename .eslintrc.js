@@ -13,5 +13,6 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['path'] }]
-  }
+  },
+  ignorePatterns: ['vite.config.ts']
 }
