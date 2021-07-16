@@ -1,4 +1,4 @@
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const host = 'localhost'
@@ -34,7 +34,7 @@ export default defineConfig({
   server: {
     host,
     port,
-    proxy,
+    proxy
   },
   build: {
     outDir: outputDir

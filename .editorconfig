@@ -6,3 +6,7 @@ insert_final_newline = true
 ij_vue_indent_children_of_top_level = template, style
 ij_continuation_indent_size = 2
 ij_typescript_object_literal_wrap = off
+
+[*.md] # 表示仅 md 文件适用以下规则
+max_line_length = off
+trim_trailing_whitespace = false
