@@ -43,7 +43,7 @@
   }
 
   // update 级联button-width 添加 left
-  $BW: $namespace+'-button-width' !global;
+  $BW: '#{$namespace}-button-width';
   & + .#{$BW} {
     margin-left: 10px;
   }
@@ -249,10 +249,7 @@
 
     &:first-child:last-child {
       // update 按钮组下 按钮圆角尺寸
-      border-top-right-radius: 7px;
-      border-bottom-right-radius: 7px;
-      border-top-left-radius: 7px;
-      border-bottom-left-radius: 7px;
+      border-radius: 7px;
 
       &.is-round {
         border-radius: 20px;
