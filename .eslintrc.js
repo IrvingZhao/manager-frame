@@ -28,5 +28,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['off', { args: 'after-used' }],
     '@typescript-eslint/no-unused-vars-experimental': ['error', { ignoreArgsIfArgsAfterAreUsed: true }]
   },
-  settings: {}
+  settings: {},
+  globals: {
+    EventListenerOrEventListenerObject: true
+  }
 }
