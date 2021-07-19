@@ -1,5 +1,5 @@
 import { newInstance } from './LoadingBar'
-import { LoadingBarInstance, LoadingBarOperator, LoadingBarOptions, LoadingBarUpdate } from './define'
+import type { LoadingBarInstance, LoadingBarOperator, LoadingBarOptions, LoadingBarUpdate } from './define'
 
 let loadingBarInstance: LoadingBarInstance | null
 let color = 'primary'

@@ -1,5 +1,5 @@
 import { Module } from 'vuex'
-import { Config } from '@/platform'
+import { Config } from '@plugin'
 
 interface FrameShowStoreState {
   noAuth: boolean

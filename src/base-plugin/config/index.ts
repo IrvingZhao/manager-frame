@@ -3,20 +3,20 @@ import { ConfigOption } from './define'
 import ApiConfig from './ApiConfig'
 import RouterConfig from './RouterConfig'
 import StoreConfig from './StoreConfig'
-import I18nConfig from './I18nConfig'
+// import I18nConfig from './I18nConfig'
 
 export default {
   install(app: App, option: ConfigOption) {
     app.use(ApiConfig, option.axiosOption)
     app.use(RouterConfig, option.routeOption)
     app.use(StoreConfig)
-    app.use(I18nConfig)
+    // app.use(I18nConfig)
   }
 }
 
 export { ApiConfig, RouterConfig, StoreConfig }
 
-export {
+export type {
   BreadOperator,
   ItemBread,
   StoreRootState,

@@ -1,5 +1,6 @@
 import { App } from 'vue'
-import ActiveHeight, { ActiveHeightParam } from './activeHeight'
+import ActiveHeight from './activeHeight'
+import type { ActiveHeightParam } from './activeHeight'
 import Resize from './resize'
 
 export default {

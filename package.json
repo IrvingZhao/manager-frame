@@ -6,6 +6,7 @@
     "build:style": "rimraf ./theme/lib && gulp -f ./theme/gulpfile.js build",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
+    "dev:production": "set NODE_ENV=production && vite",
     "prepare": "husky install",
     "lint": "eslint ./src --ext .vue,.ts,.tsx",
     "lint:fix": "eslint --fix ./src --ext .vue,.ts,.tsx",
@@ -35,6 +36,7 @@
     "@vitejs/plugin-vue-jsx": "^1.1.6",
     "@vue/compiler-sfc": "^3.0.5",
     "@vue/test-utils": "^2.0.0-rc.10",
+    "babel-plugin-component": "^1.1.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.2.0",
     "cz-customizable": "^6.3.0",
@@ -59,6 +61,7 @@
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.2",
     "vite": "^2.4.2",
+    "vite-plugin-imp": "^2.0.7",
     "vue-jest": "^5.0.0-alpha.10",
     "vue-tsc": "^0.0.24"
   },

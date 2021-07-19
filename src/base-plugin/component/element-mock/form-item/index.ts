@@ -8,7 +8,10 @@ export default defineComponent({
   extends: ElFormItem,
   props: {
     label: String,
-    labelWidth: String,
+    labelWidth: {
+      type: String,
+      default: ''
+    },
     prop: String,
     required: {
       type: Boolean,

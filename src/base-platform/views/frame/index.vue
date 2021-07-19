@@ -31,12 +31,15 @@
           </div>
           <div class="split"></div>
           <div class="breads">
-            <template v-for="(item, index) in breadNav">
-              <span :key="'bread-item-split-' + index" class="bread-splice" v-if="index > 0">/</span>
-              <span :key="'bread-item-split-' + index" class="bread-item" :class="{ link: item.path || item.click }" @click="breadClick(item, index)">
-                {{ item.name }}
-              </span>
-            </template>
+            <span
+              v-for="(item, index) in breadNav"
+              v-bind:key="'bread-item-' + index"
+              class="bread-item"
+              :class="{ link: item.path || item.click }"
+              @click="breadClick(item, index)"
+            >
+              {{ item.name }}
+            </span>
           </div>
         </div>
         <div class="right">
@@ -257,13 +260,20 @@ export default defineComponent({
           }
         }
 
+        &::before {
+          content: '/';
+          margin: 0 4px;
+        }
+
+        &:first-child {
+          &::before {
+            content: '';
+          }
+        }
+
         &:last-child {
           color: #3b74fb;
         }
-      }
-
-      .bread-splice {
-        margin: 0 2px;
       }
     }
   }

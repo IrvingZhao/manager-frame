@@ -1,5 +1,5 @@
 import { Module, Store } from 'vuex'
-import { BreadOperator, BreadStoreState, ItemBread, StoreRootState } from '../define'
+import type { BreadOperator, BreadStoreState, ItemBread, StoreRootState } from '../define'
 
 const store: Module<BreadStoreState, StoreRootState> = {
   namespaced: true,

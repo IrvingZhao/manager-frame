@@ -3,7 +3,7 @@ import { ComponentPublicInstance, DefineComponent } from 'vue'
 import { ElMessageBoxShortcutMethod, ElMessageBox } from 'element-plus/lib/el-message-box/src/message-box.type'
 import { IMessage } from 'element-plus/lib/el-message/src/types'
 import { INotification } from 'element-plus/lib/el-notification/src/notification.type'
-import { Config, Component, Utils } from './platform'
+import { Config, Component, Utils } from '@plugin'
 
 declare module '*.vue' {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
