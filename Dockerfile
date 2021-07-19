@@ -1,4 +1,4 @@
-FROM nginx:1.18.0-alpine
+FROM nginx:1.21.0-alpine
 RUN rm -rf /etc/nginx/conf.d/default.conf
 RUN mkdir -p /usr/share/nginx/html
 COPY conf/server.conf /etc/nginx/conf.d/default.conf
