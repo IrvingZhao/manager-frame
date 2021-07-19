@@ -21,7 +21,7 @@ module.exports = {
       'error',
       {
         props: true,
-        ignorePropertyModificationsFor: ['state', 'config']
+        ignorePropertyModificationsFor: ['state', 'config', 'item']
       }
     ],
     'no-unused-vars': ['off', { args: 'after-used' }],

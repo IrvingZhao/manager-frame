@@ -18,28 +18,28 @@ ElLocale.i18n(I18n.global.t)
 
 export default {
   install(app: App) {
-    const vueApp = app
-    vueApp.use(ElementMock)
-    vueApp.component('pj-button', Button)
-    vueApp.component('pj-check-input', CheckInput)
-    vueApp.component('pj-dialog', Dialog)
-    vueApp.component('pj-edit-page', EditPage)
-    vueApp.component('pj-list-page', ListPage)
-    vueApp.component('pj-multiple-select', MultipleSelect)
-    vueApp.component('pj-pagination', Pagination)
-    vueApp.component('pj-password', Password)
-    vueApp.component('pj-search-form', SearchForm)
+    const Vue = app
+    Vue.use(ElementMock)
+    Vue.component('pj-button', Button)
+    Vue.component('pj-check-input', CheckInput)
+    Vue.component('pj-dialog', Dialog)
+    Vue.component('pj-edit-page', EditPage)
+    Vue.component('pj-list-page', ListPage)
+    Vue.component('pj-multiple-select', MultipleSelect)
+    Vue.component('pj-pagination', Pagination)
+    Vue.component('pj-password', Password)
+    Vue.component('pj-search-form', SearchForm)
 
-    vueApp.directive('InfiniteScroll', ElInfiniteScroll)
-    vueApp.directive('loading', ElLoading.directive)
+    Vue.directive('InfiniteScroll', ElInfiniteScroll)
+    Vue.directive('loading', ElLoading.directive)
 
-    vueApp.config.globalProperties.$message = ElMessage
-    vueApp.config.globalProperties.$msgbox = ElMessageBox
-    vueApp.config.globalProperties.$alert = ElMessageBox.alert
-    vueApp.config.globalProperties.$confirm = ElMessageBox.confirm
-    vueApp.config.globalProperties.$prompt = ElMessageBox.prompt
-    vueApp.config.globalProperties.$notify = ElNotification
-    vueApp.config.globalProperties.$loading = LoadingBar
+    Vue.config.globalProperties.$message = ElMessage
+    Vue.config.globalProperties.$msgbox = ElMessageBox
+    Vue.config.globalProperties.$alert = ElMessageBox.alert
+    Vue.config.globalProperties.$confirm = ElMessageBox.confirm
+    Vue.config.globalProperties.$prompt = ElMessageBox.prompt
+    Vue.config.globalProperties.$notify = ElNotification
+    Vue.config.globalProperties.$loading = LoadingBar
   }
 }
 
