@@ -27,6 +27,7 @@ app.use(Platform, platformOption).use(Base)
 // 路由配置
 const router = PlatformConfig.RouterConfig.getRouter()
 router.beforeEach(BaseConfig.breadGutter)
+router.afterEach(BaseConfig.frameGutter)
 
 if (process.env.NODE_ENV !== 'development') {
   // 非开发模式，开启页面授权

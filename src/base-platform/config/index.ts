@@ -2,7 +2,7 @@ import { App } from 'vue'
 import DicStore from './store/DicStore'
 import UserStore, { tokenGetter } from './store/UserStore'
 import MenuPageStore, { authGutter, breadGutter } from './store/MenuPageStore'
-import FrameShowStore from './store/FrameShowStore'
+import FrameShowStore, { frameGutter } from './store/FrameShowStore'
 
 export default {
   install(app: App) {
@@ -14,4 +14,4 @@ export default {
 }
 export * from './store/DicStore'
 
-export { authGutter, breadGutter, tokenGetter }
+export { authGutter, breadGutter, tokenGetter, frameGutter }

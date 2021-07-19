@@ -1,4 +1,5 @@
 import { Module } from 'vuex'
+import { RouteLocationNormalized } from 'vue-router'
 import { Config } from '@plugin'
 
 interface FrameShowStoreState {
@@ -37,4 +38,12 @@ const store: Module<FrameShowStoreState, Config.StoreRootState> = {
   }
 }
 
+const frameGutter = (to: RouteLocationNormalized) => {
+  const breadStore = Config.StoreConfig.getStore()
+  const { path } = to
+  breadStore.commit('frame_show/success', path)
+}
+
 export default store
+
+export { frameGutter }
