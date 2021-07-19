@@ -3,7 +3,7 @@ import frame from './frame/index.vue'
 import page404 from './error/404.vue'
 import login from './login/index.vue'
 
-function buildRouteConfig(routes: RouteRecordRaw[]) {
+function buildRouteConfig(routes: RouteRecordRaw[]): RouteRecordRaw[] {
   const frameRoute: RouteRecordRaw = {
     name: 'root',
     path: '/',
@@ -18,7 +18,7 @@ function buildRouteConfig(routes: RouteRecordRaw[]) {
     ]
   }
 
-  const route: RouteRecordRaw[] = [
+  return [
     {
       name: 'login',
       path: '/login',
@@ -32,8 +32,6 @@ function buildRouteConfig(routes: RouteRecordRaw[]) {
       component: page404
     }
   ]
-
-  return route
 }
 
 export default buildRouteConfig
