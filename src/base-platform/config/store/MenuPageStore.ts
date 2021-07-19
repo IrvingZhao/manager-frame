@@ -94,7 +94,7 @@ const store: Module<MenuPageStoreState, Config.StoreRootState> = {
         commit('currentPath', path)
       }
       const mapPath = path || state.currentPath
-      const mapMenu = Object.values<any>(state.menuMap).find((item) => mapPath.indexOf(item.path) >= 0)
+      const mapMenu = Object.values<any>(state.menuMap).find((item) => item.path && mapPath.indexOf(item.path) >= 0)
       if (mapMenu) {
         const menuBread = Utils.TreeUtils.getTreePath(mapMenu, { parentNodeKey: 'parentNode' }).map((item) => {
           return {
