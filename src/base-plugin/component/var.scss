@@ -1,0 +1,8 @@
+@import "/theme/src/common/var.scss";
+
+$loading-bar-prefix-cls: "ivu-loading-bar";
+$zindex-loading-bar: 2000 !default;
+$transition-time: .2s !default;
+
+$primary-color: $--color-primary !default;
+$error-color: $--color-danger !default;
