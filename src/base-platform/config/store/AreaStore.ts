@@ -1,6 +1,7 @@
 import { Module, useStore } from 'vuex'
 import { Config, Utils } from '@plugin'
 import { computed } from 'vue'
+import { ComputedRef } from '@vue/reactivity'
 import { AreaData, AreaState } from '../define'
 
 const areaStore: Module<AreaState, Config.StoreRootState> = {
@@ -36,7 +37,7 @@ const areaStore: Module<AreaState, Config.StoreRootState> = {
   }
 }
 
-const getAreaData: () => AreaData = () => {
+const getAreaData: () => ComputedRef<AreaData> = () => {
   const store = useStore()
   store.dispatch('frame_area/loadAreas')
   return computed(() => store.state.frame_area.areaData)
