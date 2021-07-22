@@ -34,7 +34,7 @@
               <template #delete>
                 <pj-button config="table.delete" @click="deleteMenu(row)">删除</pj-button>
               </template>
-              <pj-button config="table.default" @click="routerPushTo(`/config/menu/${row.id}`)">子菜单</pj-button>
+              <pj-button config="table.default" @click="routerPushTo(`/${prePath}/menu/${row.id}`)">子菜单</pj-button>
             </pj-auth>
           </template>
         </pj-table-column>
@@ -52,7 +52,7 @@ import { mapState } from 'vuex'
 import { Base } from '@plugin'
 
 export default defineComponent({
-  props: ['pid', 'storeKey', 'deleteUrl'],
+  props: ['pid', 'storeKey', 'deleteUrl', 'prePath'],
   computed: { ...mapState('', ['menuList', 'pageInfo', 'menuPath', 'functionTreeMap']) },
   data() {
     return { searchParams: { name: '' } }
