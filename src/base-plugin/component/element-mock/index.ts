@@ -160,3 +160,5 @@ export default {
     Vue.component('pj-upload', Upload)
   }
 }
+
+export * from './define'

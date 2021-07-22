@@ -47,3 +47,5 @@ export default {
 const message = ElMessage
 
 export { ButtonConfig, message, LoadingBar, LoadingBarOperator, LoadingBarOptions }
+
+export * from './element-mock'

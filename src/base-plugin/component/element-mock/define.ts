@@ -200,3 +200,5 @@ export const popOverProps = {
     default: true
   }
 }
+
+export * from './cascader/config'

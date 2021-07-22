@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { useStore, Module } from 'vuex'
 import { Config } from '@plugin'
-import { DicState } from '../define'
+import { DicItem, DicItemMap, DicState } from '../define'
 
 const allDicMap = ref({}).value
 const allDicArray = ref({}).value
@@ -47,13 +47,13 @@ const dicStore: Module<DicState, Config.StoreRootState> = {
   }
 }
 
-const getDicMap = (typeKey) => {
+const getDicMap: (typeKey: string) => DicItemMap = (typeKey) => {
   const store = useStore()
   store.dispatch('frame_dic/loadDicByType', typeKey)
   return computed(() => store.state.frame_dic.allDicMap[typeKey])
 }
 
-const getDicArray = (typeKey) => {
+const getDicArray: (typeKey: string) => DicItem[] = (typeKey) => {
   const store = useStore()
   store.dispatch('frame_dic/loadDicByType', typeKey)
   return computed(() => store.state.frame_dic.allDicArray[typeKey])
