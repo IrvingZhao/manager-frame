@@ -160,9 +160,9 @@ export default defineComponent({
     loadResources() {
       // 加载资源
       if (this.hasLoadRes) {
-        return new Promise((resolve) => resolve())
+        return new Promise<void>((resolve) => resolve())
       }
-      return new Promise((resolve, reject) => {
+      return new Promise<void>((resolve, reject) => {
         this.$axios
           .get('basic/grant/resource')
           .then((res) => {
@@ -233,7 +233,7 @@ export default defineComponent({
           let ops = pageOperation[opItem.pageId]
           if (!ops) {
             ops = []
-            pageOperation[opItem.pageId] = []
+            pageOperation[opItem.pageId] = ops
           }
           ops.push(opItem)
           const { refPageId } = opItem
@@ -241,7 +241,7 @@ export default defineComponent({
             let children = pageOperation[refPageId]
             if (!children) {
               children = []
-              pageOperation[refPageId] = []
+              pageOperation[refPageId] = children
             }
             opItem.children = children
           }
