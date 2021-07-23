@@ -6,7 +6,6 @@
     "build:style": "rimraf ./theme/lib && gulp -f ./theme/gulpfile.js build",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "dev:prod": "set NODE_ENV=production && vite",
     "prepare": "husky install",
     "lint": "eslint ./src --ext .vue,.ts,.tsx",
     "lint:fix": "eslint --fix ./src --ext .vue,.ts,.tsx",

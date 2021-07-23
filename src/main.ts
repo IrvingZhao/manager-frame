@@ -29,7 +29,7 @@ const router = PlatformConfig.RouterConfig.getRouter()
 router.beforeEach(BaseConfig.breadGutter)
 router.afterEach(BaseConfig.frameGutter)
 
-if (process.env.NODE_ENV !== 'development') {
+if (import.meta.env.profile !== 'development') {
   // 非开发模式，开启页面授权
   router.beforeEach(BaseConfig.authGutter)
 } else {
