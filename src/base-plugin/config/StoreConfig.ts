@@ -8,8 +8,8 @@ let store: Store<StoreRootState>
 
 function initStore(): Store<StoreRootState> {
   return createStore<StoreRootState>({
-    strict: import.meta.env.profile === 'development',
-    devtools: import.meta.env.profile === 'development',
+    strict: import.meta.env.VITE_PROFILE === 'development',
+    devtools: import.meta.env.VITE_PROFILE === 'development',
     modules: {
       route: RouteStore.store,
       bread: BreadStore.store
