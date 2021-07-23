@@ -48,7 +48,7 @@ const store: Module<MenuPageStoreState, Config.StoreRootState> = {
           let operatorList = operators[item.pageId]
           if (!operatorList) {
             operatorList = []
-            operators[item.pageId] = []
+            operators[item.pageId] = operatorList
           }
           operatorList.push(item)
         })

@@ -14,8 +14,8 @@
     </template>
     <template #dataTag>
       <pj-breadcrumb>
-        <pj-breadcrumb-item replace to="/config/menu">根菜单</pj-breadcrumb-item>
-        <pj-breadcrumb-item :key="item.id" v-for="item in menuPath" :replace="true" :to="`/config/menu/${item.id}`"
+        <pj-breadcrumb-item replace :to="`/${prePath}/menu`">根菜单</pj-breadcrumb-item>
+        <pj-breadcrumb-item :key="item.id" v-for="item in menuPath" :replace="true" :to="`/${prePath}/menu/${item.id}`"
           >{{ item.name }}
         </pj-breadcrumb-item>
       </pj-breadcrumb>

@@ -143,8 +143,8 @@ export default defineComponent({
               } else if (item.type === 'OPERATION') {
                 let pageOp = this.menuOpChecked[item.pageId]
                 if (!pageOp) {
-                  this.menuOpChecked[item.pageId] = []
                   pageOp = []
+                  this.menuOpChecked[item.pageId] = pageOp
                 }
                 pageOp.push(item.id)
               }
