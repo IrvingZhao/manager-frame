@@ -31,6 +31,7 @@ export interface AreaDataItem {
   parentCode: string
   totalName: string
   children: AreaDataItem[]
+  getTreePath(): AreaDataItem[]
 }
 
 export interface AreaData {
@@ -41,4 +42,5 @@ export interface AreaData {
 
 export interface AreaState {
   areaData: AreaData
+  hasLoad: boolean
 }
