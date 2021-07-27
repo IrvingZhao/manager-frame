@@ -14,6 +14,5 @@ export default {
     app.config.globalProperties.$store.registerModule('frame_area', AreaStore)
   }
 }
-export * from './store/DicStore'
 
 export { authGutter, breadGutter, tokenGetter, frameGutter, getAreaData, getDicMap, getDicArray }

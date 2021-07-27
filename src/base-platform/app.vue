@@ -2,8 +2,10 @@
   <router-view></router-view>
 </template>
 
-<script>
-export default { name: 'app' }
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({})
 </script>
 
 <style lang="scss">
