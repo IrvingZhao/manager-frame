@@ -1,8 +1,7 @@
-import { ComponentPublicInstance } from 'vue'
 import { RouteLocationRaw, LocationAsPath, RouteQueryAndHash, RouteLocationOptions } from 'vue-router'
 
 export default {
-  routerAppendTo(this: ComponentPublicInstance, to: string | (LocationAsPath & RouteQueryAndHash & RouteLocationOptions)) {
+  routerAppendTo(this: any, to: string | (LocationAsPath & RouteQueryAndHash & RouteLocationOptions)) {
     const current = this.$route
     let target: RouteLocationRaw
     if (typeof to === 'object') {
@@ -17,10 +16,10 @@ export default {
     }
     this.$router.push(target)
   },
-  routerPushTo(this: ComponentPublicInstance, to: string | (LocationAsPath & RouteQueryAndHash & RouteLocationOptions)) {
+  routerPushTo(this: any, to: string | (LocationAsPath & RouteQueryAndHash & RouteLocationOptions)) {
     this.$router.push(to)
   },
-  replaceTo(this: ComponentPublicInstance, to: string | (LocationAsPath & RouteQueryAndHash & RouteLocationOptions)) {
+  replaceTo(this: any, to: string | (LocationAsPath & RouteQueryAndHash & RouteLocationOptions)) {
     let target: RouteLocationRaw
     if (typeof to === 'object') {
       target = to
@@ -32,7 +31,7 @@ export default {
     }
     this.$router.push(target)
   },
-  routerGoBack(this: ComponentPublicInstance) {
+  routerGoBack(this: any) {
     this.$router.go(-1)
   }
 }

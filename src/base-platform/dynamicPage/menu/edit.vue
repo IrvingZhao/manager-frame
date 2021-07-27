@@ -28,7 +28,6 @@
 <script lang="ts">
 import { ref } from 'vue'
 import { Base } from '@plugin'
-import { mapState } from 'vuex'
 
 const defineComponent = Base.defineEditPage
 
@@ -41,7 +40,14 @@ export default defineComponent({
     getOneUrl: String,
     prePath: String
   },
-  computed: { ...mapState('config_menu', ['functionTreeList', 'functionTreeMap']) },
+  computed: {
+    functionTreeList() {
+      return []
+    },
+    functionTreeMap() {
+      return {}
+    }
+  },
   watch: {
     functionTreeMap(newVal) {
       const data: any = this.currentData

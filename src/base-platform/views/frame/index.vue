@@ -33,10 +33,10 @@
           <div class="breads">
             <span
               v-for="(item, index) in breadNav"
-              v-bind:key="'bread-item-' + index"
+              v-bind:key="`bread-item-${String(index)}`"
               class="bread-item"
               :class="{ link: item.path || item.click }"
-              @click="breadClick(item, index)"
+              @click="breadClick(item, Number(index))"
             >
               {{ item.name }}
             </span>
