@@ -50,10 +50,5 @@ export default defineConfig({
   },
   build: {
     outDir: outputDir
-  },
-  define: {
-    process: {
-      env: { ...process.env }
-    }
   }
 })

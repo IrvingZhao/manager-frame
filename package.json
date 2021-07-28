@@ -9,7 +9,8 @@
     "prepare": "husky install",
     "lint": "eslint ./src --ext .vue,.ts,.tsx",
     "lint:fix": "eslint --fix ./src --ext .vue,.ts,.tsx",
-    "test": "jest"
+    "test": "jest",
+    "static": "node script/static.js"
   },
   "lint-staged": {
     "*.{vue,ts,tsx,jsx,js}": "eslint --fix"
