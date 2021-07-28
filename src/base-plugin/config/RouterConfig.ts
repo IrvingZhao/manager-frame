@@ -2,7 +2,7 @@ import { createRouter, Router, createWebHistory, createWebHashHistory, createMem
 import { App, nextTick } from 'vue'
 import { RouteOption } from './define'
 
-import StoreConfig from './StoreConfig'
+import { getStore } from './StoreConfig'
 
 let router: Router
 const methodMap = {
@@ -35,7 +35,7 @@ function initRouter(option: RouteOption): Router {
 
 function prePathGutter(to: RouteLocationNormalized, from: RouteLocationNormalized) {
   if (from.meta.savePrePath === undefined || from.meta.savePrePath) {
-    StoreConfig.getStore().commit('route/prePath', from.fullPath)
+    getStore().commit('route/prePath', from.fullPath)
   }
 }
 
@@ -44,6 +44,7 @@ export default {
     router = initRouter(option)
     router.afterEach(prePathGutter)
     app.use(router)
-  },
-  getRouter
+  }
 }
+
+export { getRouter }

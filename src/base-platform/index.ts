@@ -21,15 +21,15 @@ const SUCCESS_CODE = 'SUCCESS'
 const axiosStateOperators = {
   401: debounce(500, () => {
     PlatformComponent.message.error('登录信息异常，请重新登录')
-    Config.StoreConfig.getStore().commit('frame_user/clearUserInfo')
-    Config.RouterConfig.getRouter().push('/login')
+    Config.getStore().commit('frame_user/clearUserInfo')
+    Config.getRouter().push('/login')
   }),
   403: debounce(500, () => {
     PlatformComponent.message.error('您无权限访问此信息')
-    Config.StoreConfig.getStore().commit('frame_show/noAuth')
+    Config.getStore().commit('frame_show/noAuth')
   }),
   404: debounce(500, () => {
-    Config.StoreConfig.getStore().commit('frame_show/noData')
+    Config.getStore().commit('frame_show/noData')
   })
 }
 

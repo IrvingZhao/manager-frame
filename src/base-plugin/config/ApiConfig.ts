@@ -114,6 +114,23 @@ function buildAxios(config: AxiosInstanceConfig): MockAxiosInstance {
   return instance
 }
 
+function createAxios(config: AxiosInstanceConfig, key?: string) {
+  const instance = buildAxios(config)
+  if (key) {
+    $HTTP_CACHE[key] = instance
+  } else {
+    GLOBAL_APP.config.globalProperties.$axios = instance
+    GLOBAL_AXIOS = instance
+  }
+}
+
+function getAxios(key?: string) {
+  if (key) {
+    return $HTTP_CACHE[key]
+  }
+  return GLOBAL_AXIOS
+}
+
 export default {
   install(app: App, option: AxiosOption) {
     GLOBAL_APP = app
@@ -137,20 +154,7 @@ export default {
     })
 
     GLOBAL_APP.config.globalProperties.$http = $HTTP_CACHE
-  },
-  createAxios(config: AxiosInstanceConfig, key?: string) {
-    const instance = buildAxios(config)
-    if (key) {
-      $HTTP_CACHE[key] = instance
-    } else {
-      GLOBAL_APP.config.globalProperties.$axios = instance
-      GLOBAL_AXIOS = instance
-    }
-  },
-  getAxios(key?: string) {
-    if (key) {
-      return $HTTP_CACHE[key]
-    }
-    return GLOBAL_AXIOS
   }
 }
+
+export { createAxios, getAxios }

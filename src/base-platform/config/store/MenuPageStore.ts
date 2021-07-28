@@ -78,7 +78,7 @@ const store: Module<MenuPageStoreState, Config.StoreRootState> = {
       dispatch('loadAllResource')
     },
     loadAllResource({ commit, dispatch }) {
-      Config.ApiConfig.getAxios()
+      Config.getAxios()
         .get('/basic/frame/resource')
         .then((res) => {
           if (res.checkSuccess()) {
@@ -129,7 +129,7 @@ const store: Module<MenuPageStoreState, Config.StoreRootState> = {
 }
 
 const authGutter = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  const gutterStore: Store<any> = Config.StoreConfig.getStore()
+  const gutterStore: Store<any> = Config.getStore()
   const { hasAuth } = to.meta
   if (hasAuth !== false) {
     // 登录信息
@@ -145,7 +145,7 @@ const authGutter = (to: RouteLocationNormalized, from: RouteLocationNormalized, 
 }
 
 const breadGutter = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  const breadStore = Config.StoreConfig.getStore()
+  const breadStore = Config.getStore()
   const { path } = to
   breadStore.dispatch('frame_menu/updateCurrentPath', path)
   next()

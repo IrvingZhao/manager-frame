@@ -1,6 +1,5 @@
 import { App } from 'vue'
 import { ElMessage, ElMessageBox, ElInfiniteScroll, ElLoading, ElNotification } from 'element-plus'
-import ElLocale from 'element-plus/lib/locale'
 import ElementMock from './element-mock'
 import Button, { ButtonConfig } from './button'
 import CheckInput from './checkInput/index.vue'
@@ -13,9 +12,6 @@ import MultipleSelect from './multiple-select'
 import Pagination from './pagination'
 import Password from './password'
 import SearchForm from './searchForm'
-import I18n from '../config/I18nConfig'
-
-ElLocale.i18n(I18n.global.t)
 
 export default {
   install(app: App) {

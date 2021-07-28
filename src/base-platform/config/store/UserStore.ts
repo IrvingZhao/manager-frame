@@ -30,7 +30,7 @@ const store: Module<UserStoreState, Config.StoreRootState> = {
   },
   actions: {
     loadUserInfo({ commit }) {
-      Config.ApiConfig.getAxios()
+      Config.getAxios()
         .get('basic/frame/profile')
         .then((res) => {
           if (res.checkSuccess()) {
@@ -42,7 +42,7 @@ const store: Module<UserStoreState, Config.StoreRootState> = {
 }
 
 const tokenGetter = () => {
-  const tokenStore: Store<any> = Config.StoreConfig.getStore()
+  const tokenStore: Store<any> = Config.getStore()
   return { ACCESS_TOKEN: tokenStore.state.frame_user.token }
 }
 

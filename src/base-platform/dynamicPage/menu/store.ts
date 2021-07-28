@@ -100,7 +100,7 @@ function buildStore(config: MenuPageConfig): Module<MenuStoreState, Config.Store
           ...state.query,
           parentId: state.parentId
         }
-        Config.ApiConfig.getAxios()
+        Config.getAxios()
           .get(config.listUrl, { params })
           .then((res) => {
             if (res.checkSuccess()) {
@@ -111,7 +111,7 @@ function buildStore(config: MenuPageConfig): Module<MenuStoreState, Config.Store
           .catch(() => undefined)
       },
       loadAllMenu({ commit }) {
-        Config.ApiConfig.getAxios()
+        Config.getAxios()
           .get(config.allUrl)
           .then((res) => {
             if (res.checkSuccess()) {
@@ -120,7 +120,7 @@ function buildStore(config: MenuPageConfig): Module<MenuStoreState, Config.Store
           })
       },
       loadAllFunctions({ commit }) {
-        Config.ApiConfig.getAxios()
+        Config.getAxios()
           .get(config.allFuncUrl)
           .then((res) => {
             if (res.checkSuccess()) {

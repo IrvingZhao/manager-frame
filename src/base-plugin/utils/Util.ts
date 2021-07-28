@@ -23,10 +23,16 @@ export default {
   /**
    * 合并对象，不修改target对象
    * @param target 目标对象
+   * @param modify 是否修改当前
    * @param args 数据来源
    * */
-  merge(target: any, ...args: any[]): any {
-    const result = { ...target }
+  merge(target: any, modify: boolean = false, ...args: any[]): any {
+    let result
+    if (modify) {
+      result = target
+    } else {
+      result = { ...target }
+    }
     args.forEach((source) => {
       Object.entries({ ...source }).forEach(([k, v]) => {
         if (v !== undefined) {

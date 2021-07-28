@@ -25,7 +25,7 @@ const app = Base.createApp()
 app.use(Platform, platformOption).use(Base)
 
 // 路由配置
-const router = PlatformConfig.RouterConfig.getRouter()
+const router = PlatformConfig.getRouter()
 router.beforeEach(BaseConfig.breadGutter)
 router.afterEach(BaseConfig.frameGutter)
 
@@ -34,11 +34,11 @@ if (import.meta.env.VITE_PROFILE !== 'development') {
   router.beforeEach(BaseConfig.authGutter)
 } else {
   // 开发模式，关闭按钮权限
-  const store = PlatformConfig.StoreConfig.getStore()
+  const store = PlatformConfig.getStore()
   store.commit('frame_show/operatorAuth', false)
 }
 
 const config: PlatformConfig.AxiosInstanceConfig = { basePath: '/api' }
-PlatformConfig.ApiConfig.createAxios(config)
+PlatformConfig.createAxios(config)
 
 app.mount('#app')

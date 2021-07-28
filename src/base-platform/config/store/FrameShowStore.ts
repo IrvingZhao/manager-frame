@@ -39,7 +39,7 @@ const store: Module<FrameShowStoreState, Config.StoreRootState> = {
 }
 
 const frameGutter = (to: RouteLocationNormalized) => {
-  const breadStore = Config.StoreConfig.getStore()
+  const breadStore = Config.getStore()
   const { path } = to
   breadStore.commit('frame_show/success', path)
 }

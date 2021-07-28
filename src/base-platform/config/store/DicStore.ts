@@ -30,7 +30,7 @@ const dicStore: Module<DicState, Config.StoreRootState> = {
       }
       commit('addDicByType', { type, data: [] })
 
-      Config.ApiConfig.getAxios()
+      Config.getAxios()
         .get(`/basic/frame/dic/${type}`)
         .then((res) => {
           if (res.checkSuccess()) {

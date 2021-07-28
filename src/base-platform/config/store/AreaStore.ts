@@ -41,7 +41,7 @@ const areaStore: Module<AreaState, Config.StoreRootState> = {
   actions: {
     loadAreas({ state, commit }) {
       if (!state.hasLoad) {
-        Config.ApiConfig.getAxios()
+        Config.getAxios()
           .get('/basic/frame/area')
           .then((res) => {
             if (res.checkSuccess()) {
