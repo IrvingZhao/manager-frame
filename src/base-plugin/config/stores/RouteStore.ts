@@ -1,6 +1,6 @@
 import { Module, Store } from 'vuex'
 import { RouteState, StoreRootState } from '../define'
-import RouterConfig from '../RouterConfig'
+import { getRouter } from '../RouterConfig'
 
 const store: Module<RouteState, StoreRootState> = {
   namespaced: true,
@@ -18,7 +18,7 @@ const store: Module<RouteState, StoreRootState> = {
 const operator = (str: Store<StoreRootState>) => {
   return {
     replacePrePath() {
-      const router = RouterConfig.getRouter()
+      const router = getRouter()
       const { prePath } = str.state.route
       if (router && prePath && prePath !== '/') {
         router.replace(prePath).catch(() => undefined)

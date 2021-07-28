@@ -66,7 +66,7 @@ function buildAxios(config: AxiosInstanceConfig): MockAxiosInstance {
     loadOperator.start()
     // 设置请求头
     const headArray = headerGetters.map((item) => item())
-    const head = Util.merge({}, ...headArray)
+    const head = Util.merge({}, false, ...headArray)
     Object.entries(head).forEach(([k, v]) => {
       interConfig.headers[k] = v
     })
