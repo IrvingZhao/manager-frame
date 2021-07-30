@@ -35,7 +35,7 @@ const moduleResolves: ModuleResolve[] = [
     executor: 'plugin'
   },
   {
-    pattern: /\/src\/([^/])*\/*/,
+    pattern: /\/src\/(^\/)*\//,
     executor(id) {
       const paths = id.split('/')
       const result: string[] = []

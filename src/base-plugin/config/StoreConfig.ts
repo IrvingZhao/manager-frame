@@ -21,8 +21,8 @@ function getStore() {
   return store
 }
 
-function mapState<Key extends string>(namespace: string, map: Key[]): { [key in Key]: ComputedRef } {
-  const result: { [key in Key]: ComputedRef } = {} as { [key in Key]: ComputedRef }
+function mapState<Key extends string>(namespace: string, map: Key[]): { [k in Key]?: ComputedRef } {
+  const result: { [key in Key]?: ComputedRef } = {}
   return map.reduce((item, cur) => {
     item[cur] = computed(() => store.state[namespace][cur])
     return item
