@@ -13,6 +13,10 @@
   position: relative;
   height: 100%;
 
+  @include e(view){
+    padding-right: 10px;
+  }
+
   @include e(wrap) {
     overflow: auto;
     height: 100%;
