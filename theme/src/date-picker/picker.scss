@@ -1,15 +1,13 @@
-@use "sass:map";
-
-@import '../mixins/mixins';
-@import '../common/var';
-@import '../common/transition';
+@import "../mixins/mixins";
+@import "../common/var";
+@import "../common/transition";
 
 @include b(picker) {
   @include e(popper) {
     @include picker-popper(
       $--color-white,
-      1px solid var(--el-datepicker-border-color),
-      var(--el-box-shadow-light)
+      1px solid $--datepicker-border-color,
+      $--box-shadow-light,
     );
   }
 }
@@ -59,7 +57,7 @@
   .#{$namespace}-range__icon {
     font-size: 14px;
     margin-left: -5px;
-    color: var(--el-text-color-placeholder);
+    color: $--color-text-placeholder;
     float: left;
     line-height: 32px;
   }
@@ -74,11 +72,11 @@
     padding: 0;
     width: 39%;
     text-align: center;
-    font-size: var(--el-font-size-base);
-    color: var(--el-text-color-regular);
+    font-size: $--font-size-base;
+    color: $--color-text-regular;
 
     &::placeholder {
-      color: var(--el-text-color-placeholder);
+      color: $--color-text-placeholder;
     }
   }
 
@@ -91,12 +89,12 @@
     line-height: 32px;
     font-size: 14px;
     width: 5%;
-    color: var(--el-text-color-primary);
+    color: $--color-text-primary;
   }
 
   .#{$namespace}-range__close-icon {
     font-size: 14px;
-    color: var(--el-text-color-placeholder);
+    color: $--color-text-placeholder;
     width: 25px;
     display: inline-block;
     float: right;
@@ -116,34 +114,76 @@
   }
 
   @include when(active) {
-    border-color: var(--el-color-primary);
+    border-color: $--color-primary;
 
     &:hover {
-      border-color: var(--el-color-primary);
+      border-color: $--color-primary;
     }
   }
 
-  @each $size in (medium, small, mini) {
-    @include m($size) {
-      line-height: map.get($--input-height, $size);
+  @include m(medium) {
+    line-height: $--input-medium-height;
 
-      &.#{$namespace}-input__inner {
-        height: map.get($--input-height, $size);
-      }
+    &.#{$namespace}-input__inner {
+      height: $--input-medium-height;
+    }
 
-      .#{$namespace}-range-separator {
-        line-height: map.get($--input-line-height, $size);
-        font-size: map.get($--input-font-size, $size);
-      }
+    .#{$namespace}-range-separator {
+      line-height: 28px;
+      font-size: $--input-medium-font-size;
+    }
 
-      .#{$namespace}-range-input {
-        font-size: map.get($--input-font-size, $size);
-      }
+    .#{$namespace}-range-input {
+      font-size: $--input-medium-font-size;
+    }
 
-      .#{$namespace}-range__icon,
-      .#{$namespace}-range__close-icon {
-        line-height: map.get($--input-line-height, $size);
-      }
+    .#{$namespace}-range__icon,
+    .#{$namespace}-range__close-icon {
+      line-height: 28px;
+    }
+  }
+
+  @include m(small) {
+    line-height: $--input-small-height;
+
+    &.#{$namespace}-input__inner {
+      height: $--input-small-height;
+    }
+
+    .#{$namespace}-range-separator {
+      line-height: 24px;
+      font-size: $--input-small-font-size;
+    }
+
+    .#{$namespace}-range-input {
+      font-size: $--input-small-font-size;
+    }
+
+    .#{$namespace}-range__icon,
+    .#{$namespace}-range__close-icon {
+      line-height: 24px;
+    }
+  }
+
+  @include m(mini) {
+    line-height: $--input-mini-height;
+
+    &.#{$namespace}-input__inner {
+      height: $--input-mini-height;
+    }
+
+    .#{$namespace}-range-separator {
+      line-height: 20px;
+      font-size: $--input-mini-font-size;
+    }
+
+    .#{$namespace}-range-input {
+      font-size: $--input-mini-font-size;
+    }
+
+    .#{$namespace}-range__icon,
+    .#{$namespace}-range__close-icon {
+      line-height: 20px;
     }
   }
 
@@ -153,8 +193,7 @@
     color: $--input-disabled-color;
     cursor: not-allowed;
 
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       border-color: $--input-disabled-border;
     }
 

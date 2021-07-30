@@ -8,7 +8,7 @@
 
 $--button: () !default;
 
-@each $type in (primary, success, warning, danger, info) {
+@each $type in $--color-types {
   $--button: map.deep-merge(
     $--button,
     (
@@ -26,11 +26,26 @@ $--button: () !default;
 }
 
 :root {
-  @each $type in (primary, success, warning, danger, info) {
+  @each $type in $--color-types {
     --el-button-#{$type}-border-color: var(--el-color-#{$type});
   }
 
   --el-button-divide-border-color: #{rgba($--color-white, 0.5)};
+}
+
+// update 添加 button-width
+@include b(button-width) {
+  display: inline-block;
+  $B: $namespace+'-button' !global;
+  @include b(button) {
+    width: 100%;
+  }
+  & + & {
+    margin-left: 10px;
+  }
+  & + .#{$B} {
+    margin-left: 10px;
+  }
 }
 
 @include b(button) {
@@ -51,6 +66,18 @@ $--button: () !default;
   transition: 0.1s;
   font-weight: var(--el-button-font-weight);
   @include utils-user-select(none);
+
+  // update 添加图标间距
+  > i {
+    margin-right: 8px;
+  }
+
+  // update 级联button-width 添加 left
+  $BW: '#{$namespace}-button-width';
+  & + .#{$BW} {
+    margin-left: 10px;
+  }
+
   & + & {
     margin-left: 10px;
   }
@@ -181,7 +208,7 @@ $--button: () !default;
     padding: map.get($--button-padding-vertical, 'default');
   }
 
-  @each $type in (primary, success, warning, danger, info) {
+  @each $type in $--color-types {
     @include m($type) {
       @include button-variant(
         map.get($--button, 'font-color', $type),
@@ -191,7 +218,7 @@ $--button: () !default;
     }
   }
 
-  @each $size in (medium, small, mini) {
+  @each $size in (medium, small, mini,tiny) {
     @include m($size) {
       min-height: map.get($--input-height, $size);
 
@@ -301,7 +328,7 @@ $--button: () !default;
     }
   }
 
-  @each $type in (primary, success, warning, danger, info) {
+  @each $type in $--color-types {
     .#{$namespace}-button--#{$type} {
       &:first-child {
         border-right-color: var(--el-button-divide-border-color);

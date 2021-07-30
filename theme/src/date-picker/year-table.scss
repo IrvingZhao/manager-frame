@@ -1,4 +1,4 @@
-@import '../common/var';
+@import "../common/var";
 
 @include b(year-table) {
   font-size: 12px;
@@ -6,7 +6,7 @@
   border-collapse: collapse;
 
   .#{$namespace}-icon {
-    color: var(--el-datepicker-icon-color);
+    color: $--datepicker-icon-color;
   }
 
   td {
@@ -16,7 +16,7 @@
 
     &.today {
       .cell {
-        color: var(--el-color-primary);
+        color: $--color-primary;
         font-weight: bold;
       }
     }
@@ -24,10 +24,10 @@
     &.disabled .cell {
       background-color: $--background-color-base;
       cursor: not-allowed;
-      color: var(--el-text-color-placeholder);
+      color: $--color-text-placeholder;
 
       &:hover {
-        color: var(--el-text-color-placeholder);
+        color: $--color-text-placeholder;
       }
     }
 
@@ -36,16 +36,16 @@
       height: 32px;
       display: block;
       line-height: 32px;
-      color: var(--el-datepicker-font-color);
+      color: $--datepicker-font-color;
       margin: 0 auto;
 
       &:hover {
-        color: var(--el-datepicker-hover-font-color);
+        color: $--datepicker-hover-font-color;
       }
     }
 
     &.current:not(.disabled) .cell {
-      color: var(--el-datepicker-active-color);
+      color: $--datepicker-active-color;
     }
   }
 }

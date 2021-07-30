@@ -48,7 +48,7 @@
       height: var(--el-timeline-node-size-large);
     }
 
-    @each $type in (primary, success, warning, danger, info) {
+    @each $type in $--color-types {
       background-color: var(--el-color-#{$type});
     }
   }

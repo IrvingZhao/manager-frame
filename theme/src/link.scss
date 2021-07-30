@@ -3,7 +3,7 @@
 @import 'mixins/mixins';
 @import 'common/var';
 
-$types: primary, success, warning, danger, info;
+$types: $--color-types;
 
 :root {
   --el-link-font-size: var(--el-font-size-base);

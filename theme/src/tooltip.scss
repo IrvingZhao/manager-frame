@@ -36,6 +36,7 @@ $positionMap: (
     line-height: 1.2;
     min-width: 10px;
     word-wrap: break-word;
+    max-height: 300px; // update tool-tip 添加最大宽度
 
     .popper__arrow,
     .popper__arrow::after {

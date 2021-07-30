@@ -1,12 +1,11 @@
-@use "sass:map";
-
-@import 'mixins/mixins';
-@import 'mixins/utils';
-@import 'input-number';
-@import 'tooltip';
-@import 'common/var';
+@import "mixins/mixins";
+@import "mixins/utils";
+@import "input-number";
+@import "tooltip";
+@import "common/var";
 
 @include b(slider) {
+
   @include utils-clearfix;
 
   @include e(runway) {
@@ -124,7 +123,7 @@
     background-color: $--color-white;
     border-radius: 50%;
     box-sizing: border-box;
-    transition: var(--el-transition-duration-fast);
+    transition: .2s;
     user-select: none;
 
     &:hover,
@@ -147,7 +146,7 @@
     position: absolute;
     height: $--slider-height;
     width: $--slider-height;
-    border-radius: var(--el-border-radius-circle);
+    border-radius: $--border-radius-circle;
     background-color: $--slider-stop-background-color;
     transform: translateX(-50%);
   }
@@ -162,7 +161,7 @@
       position: absolute;
       transform: translateX(-50%);
       font-size: 14px;
-      color: var(--el-color-info);
+      color: $--color-info;
       margin-top: 15px;
     }
   }
@@ -188,7 +187,7 @@
       transform: translateY(50%);
     }
     &.#{$namespace}-slider--with-input {
-      padding-bottom: #{map.get($--input-height, 'medium') + 22px};
+      padding-bottom: #{$--input-medium-height + 22px};
       .#{$namespace}-slider__input {
         overflow: visible;
         float: none;
@@ -202,13 +201,14 @@
           padding-right: 5px;
         }
         .#{$namespace}-input-number__decrease,
-        .#{$namespace}-input-number__increase {
-          top: map.get($--input-height, 'small');
+        .#{$namespace}-input-number__increase
+        {
+          top: $--input-small-height;
           margin-top: -1px;
           border: $--input-border;
           line-height: 20px;
           box-sizing: border-box;
-          transition: var(--el-border-transition-base);
+          transition: $--border-transition-base;
         }
         .#{$namespace}-input-number__decrease {
           width: 18px;
@@ -225,13 +225,15 @@
         }
         &:hover {
           .#{$namespace}-input-number__decrease,
-          .#{$namespace}-input-number__increase {
+          .#{$namespace}-input-number__increase
+          {
             border-color: $--input-hover-border;
           }
         }
         &:active {
           .#{$namespace}-input-number__decrease,
-          .#{$namespace}-input-number__increase {
+          .#{$namespace}-input-number__increase
+          {
             border-color: $--input-focus-border;
           }
         }

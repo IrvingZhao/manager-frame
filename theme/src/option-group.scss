@@ -24,7 +24,7 @@
         right: $gap;
         bottom: 12px;
         height: 1px;
-        background: var(--el-border-color-light);
+        background: $--border-color-light;
       }
     }
   }
@@ -35,7 +35,7 @@
       left: $gap;
       right: $gap;
       height: 1px;
-      background: var(--el-border-color-light);
+      background: $--border-color-light;
     }
   }
 

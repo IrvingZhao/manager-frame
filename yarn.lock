@@ -919,11 +919,6 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.8.tgz#edf1bf1dbf4e04413ca8e5b17b3b7d7d54b59818"
   integrity sha512-YSBPTLTVm2e2OoQIDYx8HaeWJ5tTToLH67kXR7zYNGupXMEHa2++G8k+DczX2cFVgalypqtyZIcU19AFcmOpmg==
 
-"@types/lodash@^4.14.161":
-  version "4.14.171"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.171.tgz#f01b3a5fe3499e34b622c362a46a609fdb23573b"
-  integrity sha512-7eQ2xYLLI/LsicL2nejW9Wyko3lcpN6O/z0ZLHrEQsg280zIdCv1t/0m6UtBjUHokCGBQ3gYTbHzDkZ1xOBwwg==
-
 "@types/minimist@^1.2.0":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
@@ -2617,13 +2612,12 @@ electron-to-chromium@^1.3.723:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.778.tgz#bf01048736c95b78f2988e88005e0ebb385942a4"
   integrity sha512-Lw04qJaPtWdq0d7qKHJTgkam+FhFi3hm/scf1EyqJWdjO3ZIGUJhNmZJRXWb7yb/bRYXQyVGSpa9RqVpjjWMQw==
 
-element-plus@^1.0.2-beta.55:
-  version "1.0.2-beta.55"
-  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-1.0.2-beta.55.tgz#d95886649560c4edf21568e6d4a822e4c74fcdd0"
-  integrity sha512-I9EYxOA5H9KQ58SpFE0yejGPoAd3ui12wRLLtoS2bHdF9mrep5c6v+2cJwyc9abXGBf2RzZ8tqAp/OCCfdzjlQ==
+element-plus@^1.0.2-beta.65:
+  version "1.0.2-beta.65"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-1.0.2-beta.65.tgz#e1ff997fe395dd2e31a16517970058bc4d45fb3c"
+  integrity sha512-qQLubUvseYlz5xIatDh4M1wd9mQ3ceEjE/cDtzJ4Y8/63fip96H/JCl39za7wEXiwhqglnu3Ag48MmMbqwgBdw==
   dependencies:
     "@popperjs/core" "^2.4.4"
-    "@types/lodash" "^4.14.161"
     async-validator "^3.4.0"
     dayjs "1.x"
     lodash "^4.17.20"

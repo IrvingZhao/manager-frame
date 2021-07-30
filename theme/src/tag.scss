@@ -3,7 +3,7 @@
 @import 'mixins/mixins';
 @import 'common/var';
 
-$types: (primary, success, warning, info, danger);
+$types: $--color-types;
 
 $--tag-color: () !default;
 

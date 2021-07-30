@@ -38,7 +38,7 @@
 
   @include e(list) {
     position: relative;
-    min-height: 100%;
+    min-height: 180px; // update 由 100% 调整至 180px
     margin: 0;
     padding: 6px 0;
     list-style: none;

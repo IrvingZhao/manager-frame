@@ -80,7 +80,10 @@ export default defineConfig({
         {
           libName: 'element-plus',
           style(name) {
-            return `theme/lib/${name}.css`
+            if (name.indexOf('el') > -1) {
+              return `theme/lib/${name}.css`
+            }
+            return false
           }
         }
       ]
@@ -91,7 +94,8 @@ export default defineConfig({
       '@platform': resolve(__dirname, 'src/base-platform'),
       '@plugin': resolve(__dirname, 'src/base-plugin'),
       theme: resolve(__dirname, 'theme'),
-      '@': resolve(__dirname, 'src')
+      '@': resolve(__dirname, 'src'),
+      'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js'
     }
   },
   base: baseUrl,

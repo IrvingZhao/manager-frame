@@ -8,10 +8,10 @@
   --el-table-border-color: var(--el-border-color-lighter);
   --el-table-border: 1px solid var(--el-table-border-color);
   --el-table-font-color: var(--el-text-color-regular);
-  --el-table-header-font-color: var(--el-text-color-secondary);
+  --el-table-header-font-color: var(--el-text-color-primary); // update 更新表头颜色 由 --el-text-color-secondary 改为 --el-text-color-primary
   --el-table-row-hover-background-color: var(--el-background-color-base);
   --el-table-current-row-background-color: var(--el-color-primary-light-9);
-  --el-table-header-background-color: var(--el-color-white);
+  --el-table-header-background-color: #EDF1F7; // update table header background-color
   --el-table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
 }
 
@@ -25,6 +25,8 @@
   background-color: var(--el-color-white);
   font-size: 14px;
   color: var(--el-table-font-color);
+  border-radius: var(--el-border-radius-large); // update 表格添加圆角
+  border: 1px solid var(--el-border-color-base); // update 添加边框
 
   // 数据为空
   @include e(empty-block) {
@@ -97,8 +99,8 @@
   }
 
   @include m(fit) {
-    border-right: 0;
-    border-bottom: 0;
+    //border-right: 0; // update 移除右侧边框设置
+    //border-bottom: 0; // update 移除底部边框设置
 
     th.gutter,
     td.gutter {
@@ -129,15 +131,24 @@
     }
   }
 
+
+  // update 添加 修改背景色
+  th {
+    background-color: var(--el-table-header-background-color);
+  }
+
   th,
   td {
-    padding: 12px 0;
+    padding: 7px 0; // update 上下间距由 12 调整至 7
     min-width: 0;
     box-sizing: border-box;
     text-overflow: ellipsis;
     vertical-align: middle;
     position: relative;
     text-align: left;
+    background: var(--el-color-white); // update 添加颜色
+    color: var(--el-table-header-font-color); // update 添加文字颜色
+    font-size: var(--el-font-size-medium); // update 添加文字大小
 
     @include when(center) {
       text-align: center;
@@ -343,8 +354,10 @@
     position: absolute;
     top: -1px;
     right: 0;
-    background-color: var(--el-color-white);
+    background-color: var(--el-table-header-background-color); // update 修改背景色
     border-bottom: var(--el-table-border);
+    color: var(--el-table-header-font-color); // update 添加文字颜色
+    font-size: var(--el-font-size-medium); // update 添加文字大小
   }
 
   @include e(fixed-right) {
@@ -566,6 +579,7 @@
     .#{$namespace}-table__fixed-right {
       bottom: 0;
       overflow: hidden;
+      border-radius: var(--el-border-radius-large);
     }
   }
 

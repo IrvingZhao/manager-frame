@@ -40,7 +40,7 @@
       border-radius: 50%;
     }
 
-    @each $type in (primary, success, warning, info, danger) {
+    @each $type in $--color-types {
       @include m($type) {
         background-color: var(--el-color-#{$type});
       }

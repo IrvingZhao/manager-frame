@@ -1,12 +1,5 @@
-@import 'mixins/mixins';
-@import 'common/var';
-
-:root {
-  --el-scrollbar-opacity: 0.3;
-  --el-scrollbar-background-color: var(--el-text-color-secondary);
-  --el-scrollbar-hover-opacity: 0.5;
-  --el-scrollbar-hover-background-color: var(--el-text-color-secondary);
-}
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(scrollbar) {
   overflow: hidden;
@@ -32,13 +25,11 @@
     height: 0;
     cursor: pointer;
     border-radius: inherit;
-    background-color: var(--el-scrollbar-background-color);
-    transition: var(--el-transition-duration) background-color;
-    opacity: var(--el-scrollbar-opacity);
+    background-color: $--scrollbar-background-color;
+    transition: .3s background-color;
 
     &:hover {
-      background-color: var(--el-scrollbar-hover-background-color);
-      opacity: var(--el-scrollbar-hover-opacity);
+      background-color: $--scrollbar-hover-background-color;
     }
   }
 

@@ -24,6 +24,7 @@
 }
 
 @include b(pagination) {
+  text-align: center; // update 分页框，剧中对齐
   white-space: nowrap;
   padding: 2px 5px;
   color: var(--el-pagination-font-color);

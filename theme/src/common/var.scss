@@ -19,7 +19,7 @@ $--colors: map.deep-merge(
       'base': #409eff,
     ),
     'success': (
-      'base': #67c23a,
+      'base': #00CFA3, // update 更新 成功颜色
     ),
     'warning': (
       'base': #e6a23c,
@@ -33,6 +33,12 @@ $--colors: map.deep-merge(
     'info': (
       'base': #909399,
     ),
+    'cyan': (
+      'base': #51CBA5, // update 添加 青色
+    ),
+    'orange': (
+      'base': #FFA210, // update 添加 橘色
+    )
   ),
   $--colors
 );
@@ -45,6 +51,8 @@ $--color-warning: map.get($--colors, 'warning', 'base');
 $--color-danger: map.get($--colors, 'danger', 'base');
 $--color-error: map.get($--colors, 'error', 'base');
 $--color-info: map.get($--colors, 'info', 'base');
+
+$--color-types: primary, success, warning, danger, info,'cyan','orange';
 
 // https://sass-lang.com/documentation/values/maps#immutability
 @mixin set-color-primary-light($color, $number) {
@@ -88,7 +96,7 @@ $--color-info: map.get($--colors, 'info', 'base');
   ) !global;
 }
 
-@each $type in (success, warning, danger, error, info) {
+@each $type in (success, warning, danger, error, info,'cyan','orange') {
   @include set-color-type-light($type);
 }
 
@@ -135,6 +143,7 @@ $--border-base: $--border-width-base $--border-style-base
 $--border-radius: () !default;
 $--border-radius: map.merge(
   (
+    'large': 8px,
     'base': 4px,
     'small': 2px,
     'round': 20px,
@@ -362,6 +371,7 @@ $--input-font-size: map.merge(
     'medium': 14px,
     'small': 13px,
     'mini': 12px,
+    'tiny': 12px, // update 添加 tiny 字号
   ),
   $--input-font-size
 );
@@ -373,6 +383,7 @@ $--input-height: map.merge(
     'medium': 36px,
     'small': 32px,
     'mini': 28px,
+    'tiny': 24px, // update 添加 tiny 高度
   ),
   $--input-height
 );
@@ -383,6 +394,7 @@ $--input-line-height: map.merge(
     'medium': 28px,
     'small': 24px,
     'mini': 20px,
+    'tiny': 16px, // update 添加 tiny 行高
   ),
   $--input-line-height
 );
@@ -393,6 +405,7 @@ $--input-number-width: map.merge(
     'medium': 200px,
     'small': 130px,
     'mini': 130px,
+    'tiny': 130px, // update 添加 tiny 宽度
   ),
   $--input-number-width
 );
@@ -411,6 +424,7 @@ $--button-font-size: map.merge(
     'medium': map.get($--font-size, 'base'),
     'small': 12px,
     'mini': 12px,
+    'tiny': 12px,
   ),
   $--button-font-size
 );
@@ -422,6 +436,7 @@ $--button-border-radius: map.merge(
     'medium': var(--el-border-radius-base),
     'small': calc(var(--el-border-radius-base) - 1px),
     'mini': calc(var(--el-border-radius-base) - 1px),
+    'tiny': var(--el-border-radius-base),
   ),
   $--button-border-radius
 );
@@ -433,6 +448,7 @@ $--button-padding-vertical: map.merge(
     'medium': 10px,
     'small': 9px,
     'mini': 7px,
+    'tiny': 5px,
   ),
   $--button-padding-vertical
 );
@@ -444,6 +460,7 @@ $--button-padding-horizontal: map.merge(
     'medium': 20px,
     'small': 15px,
     'mini': 15px,
+    'tiny': 8px,
   ),
   $--button-padding-horizontal
 );

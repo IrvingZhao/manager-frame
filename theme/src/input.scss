@@ -1,14 +1,12 @@
-@use "sass:map";
-
-@import 'mixins/mixins';
-@import 'common/var';
+@import "mixins/mixins";
+@import "common/var";
 
 @include b(textarea) {
   position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: bottom;
-  font-size: var(--el-font-size-base);
+  font-size: $--font-size-base;
 
   @include e(inner) {
     display: block;
@@ -23,7 +21,7 @@
     background-image: none;
     border: $--input-border;
     border-radius: $--input-border-radius;
-    transition: var(--el-border-transition-base);
+    transition: $--border-transition-base;
 
     &::placeholder {
       color: $--input-placeholder-color;
@@ -40,7 +38,7 @@
   }
 
   & .#{$namespace}-input__count {
-    color: var(--el-color-info);
+    color: $--color-info;
     background: $--color-white;
     position: absolute;
     font-size: 12px;
@@ -64,28 +62,28 @@
 
   @include when(exceed) {
     .#{$namespace}-textarea__inner {
-      border-color: var(--el-color-danger);
+      border-color: $--color-danger;
     }
 
     .#{$namespace}-input__count {
-      color: var(--el-color-danger);
+      color: $--color-danger;
     }
   }
 }
 
 @include b(input) {
   position: relative;
-  font-size: var(--el-font-size-base);
+  font-size: $--font-size-base;
   display: inline-block;
   width: 100%;
-  line-height: map.get($--input-height, 'default');
+  line-height: $--input-height;
   @include scroll-bar;
 
   & .#{$namespace}-input__clear {
     color: $--input-icon-color;
-    font-size: map.get($--input-font-size, 'default');
+    font-size: $--input-font-size;
     cursor: pointer;
-    transition: var(--el-color-transition-base);
+    transition: $--color-transition-base;
 
     &:hover {
       color: $--input-clear-hover-color;
@@ -96,7 +94,7 @@
     height: 100%;
     display: inline-flex;
     align-items: center;
-    color: var(--el-color-info);
+    color: $--color-info;
     font-size: 12px;
 
     .#{$namespace}-input__count-inner {
@@ -117,11 +115,11 @@
     color: $--input-font-color;
     display: inline-block;
     font-size: inherit;
-    height: map.get($--input-height, 'default');
-    line-height: map.get($--input-height, 'default');
+    height: $--input-height;
+    line-height: $--input-height;
     outline: none;
     padding: 0 15px;
-    transition: var(--el-border-transition-base);
+    transition: $--border-transition-base;
     width: 100%;
 
     &::placeholder {
@@ -145,7 +143,7 @@
     top: 0;
     text-align: center;
     color: $--input-icon-color;
-    transition: all var(--el-transition-duration);
+    transition: all .3s;
     pointer-events: none;
   }
 
@@ -160,14 +158,14 @@
     top: 0;
     text-align: center;
     color: $--input-icon-color;
-    transition: all var(--el-transition-duration);
+    transition: all .3s;
   }
 
   @include e(icon) {
     width: 25px;
     text-align: center;
-    transition: all var(--el-transition-duration);
-    line-height: map.get($--input-height, 'default');
+    transition: all .3s;
+    line-height: $--input-height;
 
     &:after {
       content: '';
@@ -208,12 +206,12 @@
 
   @include when(exceed) {
     .#{$namespace}-input__inner {
-      border-color: var(--el-color-danger);
+      border-color: $--color-danger;
     }
 
     .#{$namespace}-input__suffix {
       .#{$namespace}-input__count {
-        color: var(--el-color-danger);
+        color: $--color-danger;
       }
     }
   }
@@ -236,19 +234,43 @@
     }
   }
 
-  @each $size in (medium, small, mini) {
-    @include m($size) {
-      font-size: map.get($--input-font-size, $size);
-      line-height: map.get($--input-height, $size);
+  @include m(medium) {
+    font-size: $--input-medium-font-size;
+    line-height: $--input-medium-height;
 
-      @include e(inner) {
-        height: map.get($--input-height, $size);
-        line-height: map.get($--input-height, $size);
-      }
+    @include e(inner) {
+      height: $--input-medium-height;
+      line-height: $--input-medium-height;
+    }
 
-      .#{$namespace}-input__icon {
-        line-height: map.get($--input-height, $size);
-      }
+    .#{$namespace}-input__icon {
+      line-height: $--input-medium-height;
+    }
+  }
+  @include m(small) {
+    font-size: $--input-small-font-size;
+    line-height: $--input-small-height;
+
+    @include e(inner) {
+      height: $--input-small-height;
+      line-height: $--input-small-height;
+    }
+
+    .#{$namespace}-input__icon {
+      line-height: $--input-small-height;
+    }
+  }
+  @include m(mini) {
+    font-size: $--input-mini-font-size;
+    line-height: $--input-mini-height;
+
+    @include e(inner) {
+      height: $--input-mini-height;
+      line-height: $--input-mini-height;
+    }
+
+    .#{$namespace}-input__icon {
+      line-height: $--input-mini-height;
     }
   }
 }
@@ -258,7 +280,7 @@
   display: inline-table;
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing:0;
 
   > .#{$namespace}-input__inner {
     vertical-align: middle;
@@ -267,7 +289,7 @@
 
   @include e((append, prepend)) {
     background-color: $--background-color-base;
-    color: var(--el-color-info);
+    color: $--color-info;
     vertical-align: middle;
     display: table-cell;
     position: relative;
@@ -320,9 +342,7 @@
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    .#{$namespace}-select
-      .#{$namespace}-input.is-focus
-      .#{$namespace}-input__inner {
+    .#{$namespace}-select .#{$namespace}-input.is-focus .#{$namespace}-input__inner {
       border-color: transparent;
     }
   }
@@ -332,9 +352,7 @@
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-    .#{$namespace}-select
-      .#{$namespace}-input.is-focus
-      .#{$namespace}-input__inner {
+    .#{$namespace}-select .#{$namespace}-input.is-focus .#{$namespace}-input__inner {
       border-color: transparent;
     }
   }
