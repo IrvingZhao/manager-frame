@@ -52,6 +52,7 @@ $--color-danger: map.get($--colors, 'danger', 'base');
 $--color-error: map.get($--colors, 'error', 'base');
 $--color-info: map.get($--colors, 'info', 'base');
 
+// update 添加 颜色类型
 $--color-types: primary, success, warning, danger, info,'cyan','orange';
 
 // https://sass-lang.com/documentation/values/maps#immutability
@@ -96,6 +97,7 @@ $--color-types: primary, success, warning, danger, info,'cyan','orange';
   ) !global;
 }
 
+// update 浅色循环 添加 cyan 和 orange
 @each $type in (success, warning, danger, error, info,'cyan','orange') {
   @include set-color-type-light($type);
 }
@@ -143,7 +145,7 @@ $--border-base: $--border-width-base $--border-style-base
 $--border-radius: () !default;
 $--border-radius: map.merge(
   (
-    'large': 8px,
+    'large': 8px, // update 圆角 添加 large 8px
     'base': 4px,
     'small': 2px,
     'round': 20px,
@@ -424,7 +426,7 @@ $--button-font-size: map.merge(
     'medium': map.get($--font-size, 'base'),
     'small': 12px,
     'mini': 12px,
-    'tiny': 12px,
+    'tiny': 12px, // update 添加 按钮 tiny 字号
   ),
   $--button-font-size
 );
@@ -436,7 +438,7 @@ $--button-border-radius: map.merge(
     'medium': var(--el-border-radius-base),
     'small': calc(var(--el-border-radius-base) - 1px),
     'mini': calc(var(--el-border-radius-base) - 1px),
-    'tiny': var(--el-border-radius-base),
+    'tiny': var(--el-border-radius-base), // update 添加 tiny 圆角
   ),
   $--button-border-radius
 );
@@ -448,7 +450,7 @@ $--button-padding-vertical: map.merge(
     'medium': 10px,
     'small': 9px,
     'mini': 7px,
-    'tiny': 5px,
+    'tiny': 5px, // update 添加 tiny 纵向间距
   ),
   $--button-padding-vertical
 );
@@ -460,7 +462,7 @@ $--button-padding-horizontal: map.merge(
     'medium': 20px,
     'small': 15px,
     'mini': 15px,
-    'tiny': 8px,
+    'tiny': 8px, // update 添加 tiny 横向间距
   ),
   $--button-padding-horizontal
 );

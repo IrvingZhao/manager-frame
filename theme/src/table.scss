@@ -579,7 +579,7 @@
     .#{$namespace}-table__fixed-right {
       bottom: 0;
       overflow: hidden;
-      border-radius: var(--el-border-radius-large);
+      border-radius: var(--el-border-radius-large); // update 添加圆角
     }
   }
 

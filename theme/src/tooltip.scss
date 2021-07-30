@@ -7,10 +7,10 @@
 $positions: top, bottom, left, right;
 
 $positionMap: (
-  'top': 'bottom',
-  'bottom': 'top',
-  'left': 'right',
-  'right': 'left',
+        'top': 'bottom',
+        'bottom': 'top',
+        'left': 'right',
+        'right': 'left',
 );
 
 :root {
@@ -60,13 +60,13 @@ $positionMap: (
     @each $position in $positions {
       &[x-placement^='#{$position}'] {
         margin-#{map.get($positionMap, $position)}: calc(
-          var(--el-tooltip-arrow-size + 6px)
+                var(--el-tooltip-arrow-size + 6px)
         );
       }
 
       &[x-placement^='#{$position}'] .popper__arrow {
         #{map.get($positionMap, $position)}: calc(
-          0px - var(--el-tooltip-arrow-size)
+                0px - var(--el-tooltip-arrow-size)
         );
         border-#{$position}-color: var(--el-tooltip-border-color);
         border-#{map.get($positionMap, $position)}-width: 0;

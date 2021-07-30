@@ -3,6 +3,7 @@
 @import 'mixins/mixins';
 @import 'common/var';
 
+// update 修改遍历color type
 $types: $--color-types;
 
 $--tag-color: () !default;

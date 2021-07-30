@@ -40,6 +40,7 @@
       border-radius: 50%;
     }
 
+    // update 修改遍历color type
     @each $type in $--color-types {
       @include m($type) {
         background-color: var(--el-color-#{$type});

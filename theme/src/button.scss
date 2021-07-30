@@ -8,6 +8,7 @@
 
 $--button: () !default;
 
+// update 修改遍历color type
 @each $type in $--color-types {
   $--button: map.deep-merge(
     $--button,
@@ -26,6 +27,7 @@ $--button: () !default;
 }
 
 :root {
+  // update 修改遍历color type
   @each $type in $--color-types {
     --el-button-#{$type}-border-color: var(--el-color-#{$type});
   }
@@ -208,6 +210,7 @@ $--button: () !default;
     padding: map.get($--button-padding-vertical, 'default');
   }
 
+  // update 修改遍历color type
   @each $type in $--color-types {
     @include m($type) {
       @include button-variant(
@@ -218,6 +221,7 @@ $--button: () !default;
     }
   }
 
+  // update 添加 tiny 尺寸
   @each $size in (medium, small, mini,tiny) {
     @include m($size) {
       min-height: map.get($--input-height, $size);
@@ -328,6 +332,7 @@ $--button: () !default;
     }
   }
 
+  // update 修改遍历color type
   @each $type in $--color-types {
     .#{$namespace}-button--#{$type} {
       &:first-child {

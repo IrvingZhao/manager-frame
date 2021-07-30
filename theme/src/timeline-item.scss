@@ -48,6 +48,7 @@
       height: var(--el-timeline-node-size-large);
     }
 
+    // update 修改遍历color type
     @each $type in $--color-types {
       background-color: var(--el-color-#{$type});
     }

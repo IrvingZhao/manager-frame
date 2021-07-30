@@ -21,7 +21,7 @@
   // --el-color-#{$type}
   // --el-color-#{$type}-light
   // --el-color-#{$type}-lighter
-  @each $type in $--color-types {
+  @each $type in (success, warning, danger, error, info) {
     @include set-css-color-type($type);
   }
 
@@ -50,7 +50,7 @@
     var(--el-border-color-base);
 
   // --el-border-radius-#{$type}
-  @each $type in (base, small, round, circle,'large') {
+  @each $type in (base, small, round, circle) {
     @include set-css-var-type('border-radius', $type, $--border-radius);
   }
 
