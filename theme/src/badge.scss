@@ -1,7 +1,7 @@
 @use "sass:math";
 
-@import "mixins/mixins";
-@import "common/var";
+@import 'mixins/mixins';
+@import 'common/var';
 
 @include b(badge) {
   position: relative;
@@ -40,19 +40,10 @@
       border-radius: 50%;
     }
 
-    @each $type in (primary, success, warning, info, danger) {
+    // update 修改遍历color type
+    @each $type in $--color-types {
       @include m($type) {
-        @if $type == primary {
-          background-color: $--color-primary;
-        } @else if $type == success {
-          background-color: $--color-success;
-        } @else if $type == warning {
-          background-color: $--color-warning;
-        } @else if $type == info {
-          background-color: $--color-info;
-        } @else {
-          background-color: $--color-danger;
-        }
+        background-color: var(--el-color-#{$type});
       }
     }
   }

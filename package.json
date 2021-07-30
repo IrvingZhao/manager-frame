@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "element-plus": "^1.0.2-beta.55",
+    "element-plus": "^1.0.2-beta.65",
     "mitt": "^3.0.0",
     "throttle-debounce": "^3.0.1",
     "vue": "^3.0.5",

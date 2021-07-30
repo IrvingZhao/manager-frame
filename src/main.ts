@@ -1,6 +1,8 @@
 import Platform, { PlatformOption, Component, Config as PlatformConfig } from '@plugin'
 import Base, { BaseConfig, SUCCESS_CODE, axiosStateOperators } from '@platform'
 import routes from './routes'
+import 'theme/src/base.scss'
+import 'theme/src/display.scss'
 
 const platformOption: PlatformOption = {
   config: {
