@@ -1,7 +1,7 @@
 <template>
   <div class="pj-check-input">
     <div class="input-area">
-      <pj-input v-model="value.text" :disable="formItemDisable || inputDisable" />
+      <pj-input v-model="value.text" :disabled="formItemDisable || !inputDisable" />
     </div>
     <div class="checkbox-area">
       <pj-checkbox v-model="value.check" :true-label="trueLabel" :false-label="falseLabel">{{ checkLabel }} </pj-checkbox>
@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, computed, inject, InjectionKey, ref, watch } from 'vue'
-import { ElFormContext, ElFormItemContext } from 'element-plus/lib/el-form/src/token'
+import { ElFormContext, ElFormItemContext } from 'element-plus/packages/form'
 
 const elFormKey: InjectionKey<ElFormContext> = 'elForm' as any
 
@@ -27,8 +27,7 @@ export default defineComponent({
   inheritAttrs: false,
   props: {
     modelValue: {
-      type: Object as PropType<CheckInputValue>,
-      required: true
+      type: Object as PropType<CheckInputValue>
     },
     checkLabel: {
       type: String,
