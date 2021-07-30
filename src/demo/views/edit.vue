@@ -34,6 +34,7 @@ import { Base } from '@plugin'
 const defineComponent = Base.defineEditPage
 
 export default defineComponent({
+  props: [],
   setup(props) {
     const form = ref({
       checkInput: { text: '', check: 'false' }
