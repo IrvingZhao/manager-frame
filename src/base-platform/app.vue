@@ -3,9 +3,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, provide } from 'vue'
-import { LocaleInjectionKey, LocaleContext } from 'element-plus'
+import { defineComponent, InjectionKey, provide } from 'vue'
+import { LocaleContext } from 'element-plus'
 import { Config } from '@plugin'
+
+const LocaleInjectionKey = 'ElLocaleInjection' as unknown as InjectionKey<LocaleContext>
 
 export default defineComponent({
   setup() {

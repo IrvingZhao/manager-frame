@@ -29,6 +29,7 @@ export default defineComponent({
       default: true
     }
   },
+  emits: ['close', 'open', 'select'],
   setup(props, ctx) {
     const { setup } = ElMenu
     if (setup) {

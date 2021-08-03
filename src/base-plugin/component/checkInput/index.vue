@@ -10,12 +10,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed, inject, InjectionKey, ref, watch } from 'vue'
-import { ElFormContext, ElFormItemContext } from 'element-plus/packages/form'
-
-const elFormKey: InjectionKey<ElFormContext> = 'elForm' as any
-
-const elFormItemKey: InjectionKey<ElFormItemContext> = 'elFormItem' as any
+import { defineComponent, PropType, computed, inject, ref, watch } from 'vue'
+import { ElFormContext, ElFormItemContext, elFormKey, elFormItemKey } from './define'
 
 interface CheckInputValue {
   text: string
@@ -27,7 +23,8 @@ export default defineComponent({
   inheritAttrs: false,
   props: {
     modelValue: {
-      type: Object as PropType<CheckInputValue>
+      type: Object as PropType<CheckInputValue>,
+      required: true
     },
     checkLabel: {
       type: String,
