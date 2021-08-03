@@ -57,7 +57,7 @@ export default defineComponent({
   },
   setup() {
     const searchParam: any = ref<any>({ tag: 'dataA' })
-    const tags = []
+    const tags: any[] = []
     for (let i = 1; i <= 10; i += 1) {
       searchParam[`param${i}`] = ''
       tags.push({
@@ -82,7 +82,7 @@ export default defineComponent({
       this.$store.dispatch('demo/loadData')
     },
     search() {
-      this.$store.commit('demo/query', { ...this.searchParams })
+      this.$store.commit('demo/query', { ...this.searchParam })
       this.loadData()
     },
     sizeChange(size) {
