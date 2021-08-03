@@ -69,6 +69,7 @@ export default defineComponent({
     },
     beforeChange: Function as PropType<() => Promise<boolean> | boolean>
   },
+  emits: ['update:modelValue', 'change', 'input'],
   setup(props, ctx) {
     const { setup } = ElSwitch
     if (setup) {
